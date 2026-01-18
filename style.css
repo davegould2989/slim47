@@ -330,8 +330,10 @@ footer {
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center;  /* centers each row */
   gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .video-gallery iframe {
