@@ -311,3 +311,40 @@ footer {
   margin-bottom: 20px; /* spacing below the heading */
 }
 
+/* =====================
+   YOUTUBE VIDEO GALLERY
+===================== */
+.youtube-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center the gallery inside the panel */
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ensures all rows, including last, are centered */
+  gap: 20px;
+}
+
+
+.video-gallery iframe {
+  width: 280px;
+  height: 200px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+  .video-gallery iframe {
+    width: 100%;
+    height: 180px;
+  }
+}
