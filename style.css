@@ -315,12 +315,11 @@ footer {
    YOUTUBE VIDEO GALLERY
 ===================== */
 .youtube-panel {
-  flex: 1 1 100%;       /* take full width inside .lower */
   display: flex;
   flex-direction: column;
-  align-items: center;  /* center everything inside */
-  max-width: 1000px;    /* optional max width */
-  margin: 0 auto 40px;  /* center panel + bottom spacing */
+  align-items: center;   /* center the gallery inside the panel */
+  max-width: 1000px;
+  margin: 0 auto 40px;
   padding: 20px;
   background: #111;
   border: 1px solid #333;
@@ -330,11 +329,10 @@ footer {
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* centers each row */
+  justify-content: center; /* ensures all rows, including last, are centered */
   gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
 }
+
 
 .video-gallery iframe {
   width: 280px;
