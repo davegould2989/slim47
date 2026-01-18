@@ -315,27 +315,33 @@ footer {
    YOUTUBE VIDEO GALLERY
 ===================== */
 .youtube-panel {
-  max-width: 1200px;
-  margin: 40px auto; /* centers the whole panel */
+  flex: 1 1 100%;       /* take full width inside .lower */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center everything inside */
+  max-width: 1000px;    /* optional max width */
+  margin: 0 auto 40px;  /* center panel + bottom spacing */
+  padding: 20px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
 }
 
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* center the videos */
+  justify-content: center;
   gap: 20px;
-  max-width: 900px;         /* constrain the total width */
-  margin: 0 auto;           /* center the gallery inside the panel */
 }
 
 .video-gallery iframe {
-  width: 280px; /* fixed width per video */
+  width: 280px;
   height: 200px;
   border: 0;
   border-radius: 8px;
 }
 
-/* Mobile: full width if viewport < 400px */
+/* Mobile responsiveness */
 @media (max-width: 400px) {
   .video-gallery iframe {
     width: 100%;
