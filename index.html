@@ -31,11 +31,11 @@
 
 <main class="container">
 
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-image">
       <img src="images/band.jpg" alt="Slim 47 Live">
     </div>
-
     <div class="hero-text">
       <p>
         <strong>Slim 47</strong> are a 4 piece, indie/rock covers band based in Northampton.
@@ -55,10 +55,10 @@
         Le Mans, London Marathon and festivals of all sizes, we are always in demand
         and also perform at private functions, parties and weddings.
       </p>
-
     </div>
   </section>
 
+  <!-- LOWER SECTION (Gigs + Facebook) -->
   <section class="lower">
 
     <div class="panel">
@@ -76,10 +76,8 @@
       <a class="button" href="gigs.html">Click for the Gig List</a>
     </div>
 
-    <!-- New Facebook Panel -->
     <div class="panel facebook-panel">
       <h3>Facebook Feed</h3>
-
       <div class="fb-page"
            data-href="https://www.facebook.com/Slim47"
            data-tabs="timeline"
@@ -97,32 +95,29 @@
 
   </section>
 
+  <!-- YOUTUBE VIDEOS (OUTSIDE .lower so fully centered) -->
+  <section class="panel youtube-panel">
+    <h3>Our Videos</h3>
+    <div class="video-gallery">
+      <iframe src="https://www.youtube.com/embed/S7aOnxDiouA" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
+    </div>
+  </section>
+
 </main>
-
-
-
-<!-- Facebook SDK (required for feed to load) -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
-</script>
-
-
-<!-- YouTube Videos Section -->
-<section class="panel youtube-panel">
-  <h3>Our Videos.</h3>
-  <div class="video-gallery">
-    <iframe src="https://www.youtube.com/embed/Dm-epupcAdQ" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/7DvWoIEzHok" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/1HYIdQE3Es8" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/KsLHTFWLGnA" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/S7aOnxDiouA" allowfullscreen></iframe>
-  </div>
-</section>
 
 <footer>
   <p>&copy; Slim 47 2026 - All rights reserved</p>
 </footer>
+
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0">
+</script>
 
 </body>
 </html>
