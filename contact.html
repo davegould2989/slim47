@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slim 47 | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* =====================
+       CONTACT PAGE STYLES
+    ==================== */
+    .contact-container {
+      max-width: 750px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+    }
+
+    .contact-container h3 {
+      color: #e10600;
+      border-bottom: 3px solid #e10600;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .contact-container p, .contact-container ul {
+      margin-bottom: 15px;
+      color: #eee;
+    }
+
+    .contact-container ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-container ul li {
+      margin-bottom: 10px;
+    }
+
+    .contact-container a {
+      color: #e10600;
+      text-decoration: none;
+    }
+
+    .contact-container a:hover {
+      text-decoration: underline;
+    }
+
+    /* =====================
+       CONTACT FORM
+    ==================== */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background: #000;
+      color: #eee;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    form button {
+      padding: 10px;
+      background: #e10600;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #b40400;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="top-bar"></div>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="images/band-logo.png" alt="Slim 47">
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="set-list.html">Set List</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="gigs.html">Gig List</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="contact-container">
+    <h3>Contact Us</h3>
+
+    <p>Contact us, by using one of these options:</p>
+    <ul>
+      <li>Email: <a href="mailto:info@slim47.com">info@slim47.com</a></li>
+      <li>Facebook page: <a href="https://www.Facebook.com/slim47" target="_blank" rel="noopener">Facebook.com/slim47</a></li>
+      <li>...or call/WhatsApp Dave on 07867 229878 if you would like to talk to us about booking Slim 47 for a pub gig, private function, festival or just to tell us how awesome we are!</li>
+    </ul>
+
+    <p>Fill in the form below:</p>
+
+    <p><strong>NB:</strong> If you email us (or use this form) and don't get a reply, please check your spam folder as we are finding emails are often mis-identified.</p>
+
+<form action="contact-form-handler.php" method="POST">
+  <label for="name">Name *</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email *</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message *</label>
+  <textarea id="message" name="message" rows="6" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; Slim 47 2026 - All rights reserved</p>
+</footer>
+
+</body>
+</html>
