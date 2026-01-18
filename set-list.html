@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slim 47 | Set List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* =====================
+       SET LIST PANEL – MULTI-COLUMN
+    ===================== */
+    .setlist-panel {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto 40px;
+    }
+
+    .setlist-panel h3 {
+      color: #e10600;
+      border-bottom: 3px solid #e10600;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .setlist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .setlist p {
+      background: #111;
+      color: #eee;
+      padding: 6px 10px;
+      border: 1px solid #222;
+      border-radius: 4px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .setlist p:hover {
+      background: #222;
+    }
+
+    @media (max-width: 600px) {
+      .setlist {
+        grid-template-columns: 1fr; /* single column on mobile */
+        gap: 10px;
+      }
+
+      .setlist p {
+        padding: 8px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="top-bar"></div>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="images/band-logo.png" alt="Slim 47">
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="set-list.html" class="active">Set List</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gigs.html">Gig List</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+<section class="panel setlist-panel">
+  <h3>Set List</h3>
+<div class="setlist">
+  <p>A LITTLE RESPECT • Wheatus</p>
+  <p>RUN • Snow Patrol</p>
+  <p>WHEREVER YOU WILL GO • The Calling</p>
+  <!-- continue with the rest of your songs here -->
+</div>
+    <!-- continue your list here -->
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; Slim 47 2026 - All rights reserved</p>
+</footer>
+
+</body>
+</html>
