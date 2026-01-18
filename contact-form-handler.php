@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Message:\n$message\n";
 
     // Email headers
-    $headers = "From: $name <$email>";
+    $headers = "From: Slim 47 <info@slim47.com>";
+
 
     // Send email
     if (mail($to, $subject, $email_content, $headers)) {
