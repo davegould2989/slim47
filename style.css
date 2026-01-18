@@ -373,7 +373,7 @@ footer {
 
 .setlist {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* bigger minimum width */
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
   gap: 12px;
 }
 
