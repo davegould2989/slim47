@@ -51,7 +51,6 @@ nav {
   align-items: center;
 }
 
-
 /* =====================
    LOGO
 ===================== */
@@ -101,8 +100,6 @@ nav a.active {
   padding: 0 10px;
 }
 
-
-
 /* =====================
    HERO SECTION
 ===================== */
@@ -113,7 +110,6 @@ nav a.active {
   padding: 15px 20px; /* top/bottom tighter */
   border: 1px solid #333;
 }
-
 
 .hero-image img {
   max-width: 100%;
@@ -231,8 +227,6 @@ footer {
   }
 }
 
-
-
 /* =====================
    GIG LIST GRID STYLE – FIXED FOR TOWN
 ===================== */
@@ -249,7 +243,7 @@ footer {
   padding: 6px 10px;
   border-bottom: 1px solid #333;
   align-items: center;
-  max-width: 700px; /* constrain overall width so town isn't too far right */
+  max-width: 700px; /* constrain width */
 }
 
 .gig-list-text .gig-date {
@@ -298,17 +292,17 @@ footer {
    GIG LIST PANEL
 ===================== */
 .gig-list-wrapper {
-  background: #111;       /* same dark panel as elsewhere */
+  background: #111;
   border: 1px solid #333; 
   padding: 20px;
-  max-width: 750px;       /* constrains width */
-  margin: 0 auto 40px;    /* centers on page with bottom gap */
-  border-radius: 6px;     /* slightly rounded corners */
+  max-width: 750px;
+  margin: 0 auto 40px;
+  border-radius: 6px;
 }
 
 .gig-list-wrapper h3 {
   text-align: center;
-  margin-bottom: 20px; /* spacing below the heading */
+  margin-bottom: 20px;
 }
 
 /* =====================
@@ -317,7 +311,7 @@ footer {
 .youtube-panel {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* center the gallery inside the panel */
+  align-items: center;
   max-width: 1000px;
   margin: 0 auto 40px;
   padding: 20px;
@@ -329,10 +323,9 @@ footer {
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* ensures all rows, including last, are centered */
+  justify-content: center;
   gap: 20px;
 }
-
 
 .video-gallery iframe {
   width: 280px;
@@ -341,10 +334,55 @@ footer {
   border-radius: 8px;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 400px) {
   .video-gallery iframe {
     width: 100%;
     height: 180px;
+  }
+}
+
+/* =====================
+   SET LIST PANEL
+===================== */
+.setlist-wrapper {
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px;
+  max-width: 750px;
+  margin: 0 auto 40px;
+  border-radius: 6px;
+}
+
+.setlist-wrapper h3 {
+  text-align: center;
+  color: #e10600;
+  border-bottom: 3px solid #e10600; /* red line under heading */
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* =====================
+   SET LIST GRID – 3 COLUMN
+===================== */
+.setlist-text {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 15px;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;  /* smaller font */
+  line-height: 1.4;
+}
+
+.setlist-text span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Mobile – stack columns */
+@media (max-width: 700px) {
+  .setlist-text {
+    grid-template-columns: 1fr;
   }
 }
