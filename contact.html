@@ -7,18 +7,27 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* =====================
-       CONTACT PAGE STYLES
+       CONTACT PAGE BOXES
     ==================== */
-    .contact-container {
-      max-width: 750px;
-      margin: 20px auto;
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto 40px;
       padding: 20px;
+    }
+
+    .contact-box {
+      flex: 1 1 350px;
       background: #111;
       border: 1px solid #333;
       border-radius: 6px;
+      padding: 20px;
+      color: #eee;
     }
 
-    .contact-container h3 {
+    .contact-box h3 {
       color: #e10600;
       border-bottom: 3px solid #e10600;
       padding-bottom: 5px;
@@ -26,68 +35,21 @@
       text-align: center;
     }
 
-    .contact-container p, .contact-container ul {
-      margin-bottom: 15px;
-      color: #eee;
-    }
-
-    .contact-container ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .contact-container ul li {
+    .contact-box p, .contact-box a {
       margin-bottom: 10px;
-    }
-
-    .contact-container a {
-      color: #e10600;
+      display: block;
+      color: #eee;
       text-decoration: none;
     }
 
-    .contact-container a:hover {
-      text-decoration: underline;
+    .contact-box a:hover {
+      color: #e10600;
     }
 
-    /* =====================
-       CONTACT FORM
-    ==================== */
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    form label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      margin-bottom: 15px;
-      padding: 8px;
-      border: 1px solid #444;
-      border-radius: 4px;
-      background: #000;
-      color: #eee;
-    }
-
-    form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    form button {
-      padding: 10px;
-      background: #e10600;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    form button:hover {
-      background: #b40400;
+    @media (max-width: 700px) {
+      .contact-wrapper {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -112,37 +74,20 @@
 </header>
 
 <main class="container">
+  <section class="panel">
+    <div class="contact-wrapper">
 
-  <section class="contact-container">
-    <h3>Contact Us</h3>
+      <div class="contact-box">
+        <h3>Contact Us</h3>
+        <p>Contact us, by using one of these options:</p>
+        <p>Email: <a href="mailto:info@slim47.com">info@slim47.com</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/slim47" target="_blank">Facebook.com/slim47</a></p>
+        <p>...or call/WhatsApp Dave on 07867 229878 if you would like to talk to us about booking us for a pub gig, private function, festival or just to tell us how awesome we are!</p>
+        <p>NB: If you email us (or use this form) and don't get a reply, please check your spam folder as we are finding emails are often mis-identified.</p>
+      </div>
 
-    <p>Contact us, by using one of these options:</p>
-    <ul>
-      <li>Email: <a href="mailto:info@slim47.com">info@slim47.com</a></li>
-      <li>Facebook page: <a href="https://www.Facebook.com/slim47" target="_blank" rel="noopener">Facebook.com/slim47</a></li>
-      <li>...or call/WhatsApp Dave on 07867 229878 if you would like to talk to us about booking Slim 47 for a pub gig, private function, festival or just to tell us how awesome we are!</li>
-    </ul>
-
-    <p>Fill in the form below:</p>
-
-    <p><strong>NB:</strong> If you email us (or use this form) and don't get a reply, please check your spam folder as we are finding emails are often mis-identified.</p>
-
-<form action="contact-form-handler.php" method="POST">
-  <label for="name">Name *</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="email">Email *</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="message">Message *</label>
-  <textarea id="message" name="message" rows="6" required></textarea>
-
-  <button type="submit">Send Message</button>
-</form>
-
-
+    </div>
   </section>
-
 </main>
 
 <footer>
