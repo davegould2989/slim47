@@ -322,18 +322,20 @@ footer {
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* centers the videos horizontally */
+  justify-content: center;  /* center the videos */
   gap: 20px;
+  max-width: 900px;         /* constrain the total width */
+  margin: 0 auto;           /* center the gallery inside the panel */
 }
 
 .video-gallery iframe {
-  width: 280px; /* fixed width for better alignment */
-  height: 200px; /* adjust if needed */
+  width: 280px; /* fixed width per video */
+  height: 200px;
   border: 0;
   border-radius: 8px;
 }
 
-/* Mobile: make videos smaller if screen < 400px */
+/* Mobile: full width if viewport < 400px */
 @media (max-width: 400px) {
   .video-gallery iframe {
     width: 100%;
