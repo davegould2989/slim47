@@ -7,69 +7,94 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* =====================
-       PHOTOS PAGE
+       PHOTOS PAGE GRID
     ==================== */
     .photos-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
       max-width: 1000px;
       margin: 0 auto 40px;
       padding: 20px;
-    }
-
-    .photos-wrapper h3 {
-      text-align: center;
-      color: #e10600;
-      border-bottom: 3px solid #e10600; /* red line under heading */
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-
-    .photo-gallery {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
     }
 
-    .photo-gallery a {
-      flex: 1 1 30%; /* three photos per row */
-      max-width: 300px;
-      display: block;
-    }
-
-    .photo-gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
+    .photo-box {
+      flex: 1 1 250px; /* 3-4 per row depending on screen */
+      background: #111;
       border: 1px solid #333;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, filter 0.3s;
     }
 
-    .photo-credit {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
+    .photo-box img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
     }
 
-    .photo-credit a {
-      color: #e10600;
-      text-decoration: none;
+    .photo-box:hover {
+      transform: scale(1.05);
+      filter: brightness(1.2);
     }
 
-    .photo-credit a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 700px) {
-      .photo-gallery a {
-        flex: 1 1 45%; /* stack 2 per row on smaller screens */
+    @media (max-width: 800px) {
+      .photo-box {
+        flex: 1 1 45%; /* 2 per row on tablets */
       }
     }
 
     @media (max-width: 500px) {
-      .photo-gallery a {
-        flex: 1 1 100%; /* single column on very small screens */
+      .photo-box {
+        flex: 1 1 100%; /* 1 per row on phones */
       }
+    }
+
+    .photos-wrapper h3 {
+      color: #e10600;
+      border-bottom: 3px solid #e10600;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* =====================
+       LIGHTBOX
+    ==================== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -97,8 +122,8 @@
   <section class="panel">
     <div class="photos-wrapper">
       <h3>Santa Pod</h3>
-
-      <div class="photo-gallery">
+<div class="photo-grid">
+      <!-- Photo boxes (slim47 (6) removed) -->
       <div class="photo-box"><a href="#lightbox1"><img src="images/photos/slim47 (1).jpg" alt="Slim 47 photo 1"></a></div>
       <div class="photo-box"><a href="#lightbox2"><img src="images/photos/slim47 (2).jpg" alt="Slim 47 photo 2"></a></div>
       <div class="photo-box"><a href="#lightbox3"><img src="images/photos/slim47 (3).jpg" alt="Slim 47 photo 3"></a></div>
@@ -119,15 +144,39 @@
       <div class="photo-box"><a href="#lightbox19"><img src="images/photos/slim47 (19).jpg" alt="Slim 47 photo 19"></a></div>
       <div class="photo-box"><a href="#lightbox20"><img src="images/photos/slim47 (20).jpg" alt="Slim 47 photo 20"></a></div>
       <div class="photo-box"><a href="#lightbox21"><img src="images/photos/slim47 (21).jpg" alt="Slim 47 photo 21"></a></div>
-      </div>
-
-      <div class="photo-credit">
-        Thanks to Ben from <a href="http://www.bgrphotography.com/" target="_blank">BGR Photography</a>
-      </div>
 
     </div>
   </section>
 </main>
+
+<!-- =====================
+     LIGHTBOX MODALS
+===================== -->
+<div id="lightbox1" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (1).jpg" alt="Slim 47 photo 1"></div>
+<div id="lightbox2" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (2).jpg" alt="Slim 47 photo 2"></div>
+<div id="lightbox3" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (3).jpg" alt="Slim 47 photo 3"></div>
+<div id="lightbox4" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (4).jpg" alt="Slim 47 photo 4"></div>
+<div id="lightbox5" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (5).jpg" alt="Slim 47 photo 5"></div>
+<div id="lightbox7" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (7).jpg" alt="Slim 47 photo 7"></div>
+<div id="lightbox8" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (8).jpg" alt="Slim 47 photo 8"></div>
+<div id="lightbox9" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (9).jpg" alt="Slim 47 photo 9"></div>
+<div id="lightbox10" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (10).jpg" alt="Slim 47 photo 10"></div>
+<div id="lightbox11" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (11).jpg" alt="Slim 47 photo 11"></div>
+<div id="lightbox12" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (12).jpg" alt="Slim 47 photo 12"></div>
+<div id="lightbox13" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (13).jpg" alt="Slim 47 photo 13"></div>
+<div id="lightbox14" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (14).jpg" alt="Slim 47 photo 14"></div>
+<div id="lightbox15" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (15).jpg" alt="Slim 47 photo 15"></div>
+<div id="lightbox16" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (16).jpg" alt="Slim 47 photo 16"></div>
+<div id="lightbox17" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (17).jpg" alt="Slim 47 photo 17"></div>
+<div id="lightbox18" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (18).jpg" alt="Slim 47 photo 18"></div>
+<div id="lightbox19" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (19).jpg" alt="Slim 47 photo 19"></div>
+<div id="lightbox20" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (20).jpg" alt="Slim 47 photo 20"></div>
+<div id="lightbox21" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/photos/slim47 (21).jpg" alt="Slim 47 photo 21"></div>
+
+<div class="photo-credit">
+  Thanks to Ben from<a href="http://www.bgrphotography.com/" target="_blank"> BGR Photography</a>
+</div>
+
 
 <footer>
   <p>&copy; Slim 47 2026 - All rights reserved</p>
