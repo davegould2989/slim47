@@ -388,11 +388,13 @@ footer {
 }
 
 .photos-wrapper h3 {
+  text-align: center;      /* center text */
   color: #e10600;
-  border-bottom: 3px solid #e10600;
+  border-bottom: 3px solid #e10600; 
   padding-bottom: 5px;
-  margin-bottom: 20px; /* ensures space below the red line */
-  text-align: center;
+  margin-bottom: 20px;
+  display: block;          /* change from inline-block to block */
+  width: 100%;             /* ensures full width so border and text are centered */
 }
 
 .photo-grid {
