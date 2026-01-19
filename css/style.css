@@ -367,18 +367,23 @@ footer {
 ===================== */
 .setlist-text {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 15px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* flexible columns */
+  gap: 25px; /* a bit more spacing */
   color: #eee;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;  /* smaller font */
+  font-size: 14px;
   line-height: 1.4;
+  max-width: 950px;  /* expand the grid width */
+  margin: 0 auto;     /* center on page */
 }
 
 .setlist-text span {
-  display: block;
-  margin-bottom: 8px;
+  display: inline-block; /* keep artist and song on same line */
+  white-space: nowrap;   /* prevents artist-song from splitting */
+  overflow: hidden;      /* optional, prevents overflow */
+  text-overflow: ellipsis; /* optional, adds ... if it overflows */
 }
+
 
 /* Mobile – stack columns */
 @media (max-width: 700px) {
