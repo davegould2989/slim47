@@ -386,3 +386,36 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.photos-wrapper h3 {
+  text-align: center;      /* center text */
+  color: #e10600;
+  border-bottom: 3px solid #e10600; 
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  display: block;          /* change from inline-block to block */
+  width: 100%;             /* ensures full width so border and text are centered */
+}
+
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photo-credit {
+  text-align: center;
+  color: #eee;
+  margin: 15px 0;
+  font-size: 0.9em;
+}
+
+.photo-credit a {
+  color: #e10600;
+  text-decoration: none;
+}
+
+.photo-credit a:hover {
+  text-decoration: underline;
+}
