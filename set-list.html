@@ -6,63 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* =====================
-       SET LIST PANEL
-    ==================== */
-    .setlist-wrapper {
-      background: #111;
-      border: 1px solid #333;
-      padding: 20px;
-      max-width: 750px;
-      margin: 0 auto 40px;
-      border-radius: 6px;
-    }
+/* =====================
+   SET LIST PANEL
+===================== */
+.setlist-wrapper {
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px;
+  max-width: 1100px;  /* make it wider */
+  margin: 0 auto 40px;
+  border-radius: 6px;
+}
 
-    .setlist-wrapper h3 {
-      text-align: center;
-      color: #e10600;
-      border-bottom: 3px solid #e10600;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
+/* Heading */
+.setlist-wrapper h3 {
+  text-align: center;
+  color: #e10600;
+  border-bottom: 3px solid #e10600;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
 
-    /* =====================
-       SET LIST GRID – 3 COLUMN
-    ==================== */
-    .setlist-text {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      gap: 15px;
-      color: #eee;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 1.4;
-    }
+/* =====================
+   SET LIST GRID – 3 COLUMN
+===================== */
+.setlist-text {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 15px;
+  color: #eee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
 
-    .setlist-text span {
-      display: inline-block; /* keeps artist and song on one line */
-      margin-bottom: 8px;
-    }
+.setlist-text span {
+  display: inline-block; /* keeps artist and song on one line */
+  margin-bottom: 8px;
+}
 
-    .setlist-text .artist {
-      color: #e10600; /* artist in red */
-      font-weight: bold;
-      display: inline; /* ensures inline with song title */
-    }
+.setlist-text .artist {
+  color: #e10600; /* artist in red */
+  font-weight: bold;
+  display: inline; /* ensures inline with song title */
+}
 
-    /* Mobile – stack columns */
-    @media (max-width: 700px) {
-      .setlist-text {
-        grid-template-columns: 1fr;
-      }
-    }
+/* Mobile – stack columns */
+@media (max-width: 700px) {
+  .setlist-text {
+    grid-template-columns: 1fr;
+  }
+}
 
-    /* Intro text */
-    .setlist-intro {
-      text-align: center;
-      margin-bottom: 15px;
-    }
+/* Intro text */
+.setlist-intro {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
   </style>
 </head>
 <body>
