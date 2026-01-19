@@ -5,6 +5,65 @@
   <title>Slim 47 | Set List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* =====================
+       SET LIST PANEL
+    ==================== */
+    .setlist-wrapper {
+      background: #111;
+      border: 1px solid #333;
+      padding: 20px;
+      max-width: 750px;
+      margin: 0 auto 40px;
+      border-radius: 6px;
+    }
+
+    .setlist-wrapper h3 {
+      text-align: center;
+      color: #e10600;
+      border-bottom: 3px solid #e10600;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    /* =====================
+       SET LIST GRID – 3 COLUMN
+    ==================== */
+    .setlist-text {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 15px;
+      color: #eee;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .setlist-text span {
+      display: inline-block; /* keeps artist and song on one line */
+      margin-bottom: 8px;
+    }
+
+    .setlist-text .artist {
+      color: #e10600; /* artist in red */
+      font-weight: bold;
+      display: inline; /* ensures inline with song title */
+    }
+
+    /* Mobile – stack columns */
+    @media (max-width: 700px) {
+      .setlist-text {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Intro text */
+    .setlist-intro {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,58 +90,55 @@
 <section class="panel setlist-wrapper">
   <h3>Set List</h3>
 
-    <p class="setlist-intro">
-      We like to tailor what we play to our audience on the night -  
-      Below is a list of songs we can call on.
-<br><br>
-    </p>
-
-
+  <p class="setlist-intro">
+    We like to tailor what we play to our audience on the night -  
+    Below is a list of songs we can call on.
+  </p>
 
   <div class="setlist-text">
-    <span>Arctic Monkeys - Look Good On The Dancefloor</span>
-    <span>Arctic Monkeys - When The Sun Goes Down</span>
-    <span>Blink 182 - All The Small Things</span>
-    <span>Blur - Parklife</span>
-    <span>Blur - Song 2</span>
-    <span>Coldplay - Fix You</span>
-    <span>Coldplay - Yellow</span>
-    <span>Eagle Eye Cherry - Save Tonight</span>
-    <span>Ed Sheeran - Castle On The Hill</span>
-    <span>Ed Sheeran - Sing</span>
-    <span>Foo Fighters - Learn To Fly</span>
-    <span>Foo Fighters - The Pretender</span>
-    <span>Franz Ferdinand - Take Me Out</span>
-    <span>Green Day - Basket Case</span>
-    <span>James - Laid</span>
-    <span>James - Sit Down</span>
-    <span>Jet - Are You Gonna Be My Girl</span>
-    <span>Kaiser Chiefs - I Predict A Riot</span>
-    <span>Kings Of Leon - Sex On Fire</span>
-    <span>The Calling - Wherever You Will Go</span>
-    <span>The Clash - Should I Stay...</span>
-    <span>The Killers - Mr Brightside</span>
-    <span>The Kooks - Naive</span>
-    <span>The Proclaimers - 500 Miles</span>
-    <span>The Verve - Lucky Man</span>
-    <span>Nickelback - How You Remind Me</span>
-    <span>Oasis - Champagne Supernova</span>
-    <span>Oasis - Don't Look Back In Anger</span>
-    <span>Oasis - Wonderwall</span>
-    <span>Queens Of The Stone Age - No One Knows</span>
-    <span>Rage Against The Machine - Killing In The Name Of</span>
-    <span>Razorlight - America</span>
-    <span>Red Hot Chili Peppers - By The Way</span>
-    <span>Red Hot Chili Peppers - Can't Stop</span>
-    <span>Reef - Place Your Hands</span>
-    <span>Semisonic - Closing Time</span>
-    <span>Snow Patrol - Chasing Cars</span>
-    <span>Snow Patrol - Run</span>
-    <span>White Stripes - Seven Nation Army</span>
-    <span>Wheatus - A Little Respect</span>
-    <span>Wheatus - Teenage Dirtbag</span>
-    <span>U2 - Where The Streets Have No Name</span>
-    <span>The Wannadies - You & Me Song</span>
+    <span><span class="artist">Arctic Monkeys</span> - Look Good On The Dancefloor</span>
+    <span><span class="artist">Arctic Monkeys</span> - When The Sun Goes Down</span>
+    <span><span class="artist">Blink 182</span> - All The Small Things</span>
+    <span><span class="artist">Blur</span> - Parklife</span>
+    <span><span class="artist">Blur</span> - Song 2</span>
+    <span><span class="artist">Coldplay</span> - Fix You</span>
+    <span><span class="artist">Coldplay</span> - Yellow</span>
+    <span><span class="artist">Eagle Eye Cherry</span> - Save Tonight</span>
+    <span><span class="artist">Ed Sheeran</span> - Castle On The Hill</span>
+    <span><span class="artist">Ed Sheeran</span> - Sing</span>
+    <span><span class="artist">Foo Fighters</span> - Learn To Fly</span>
+    <span><span class="artist">Foo Fighters</span> - The Pretender</span>
+    <span><span class="artist">Franz Ferdinand</span> - Take Me Out</span>
+    <span><span class="artist">Green Day</span> - Basket Case</span>
+    <span><span class="artist">James</span> - Laid</span>
+    <span><span class="artist">James</span> - Sit Down</span>
+    <span><span class="artist">Jet</span> - Are You Gonna Be My Girl</span>
+    <span><span class="artist">Kaiser Chiefs</span> - I Predict A Riot</span>
+    <span><span class="artist">Kings Of Leon</span> - Sex On Fire</span>
+    <span><span class="artist">The Calling</span> - Wherever You Will Go</span>
+    <span><span class="artist">The Clash</span> - Should I Stay...</span>
+    <span><span class="artist">The Killers</span> - Mr Brightside</span>
+    <span><span class="artist">The Kooks</span> - Naive</span>
+    <span><span class="artist">The Proclaimers</span> - 500 Miles</span>
+    <span><span class="artist">The Verve</span> - Lucky Man</span>
+    <span><span class="artist">Nickelback</span> - How You Remind Me</span>
+    <span><span class="artist">Oasis</span> - Champagne Supernova</span>
+    <span><span class="artist">Oasis</span> - Don't Look Back In Anger</span>
+    <span><span class="artist">Oasis</span> - Wonderwall</span>
+    <span><span class="artist">Queens Of The Stone Age</span> - No One Knows</span>
+    <span><span class="artist">Rage Against The Machine</span> - Killing In The Name Of</span>
+    <span><span class="artist">Razorlight</span> - America</span>
+    <span><span class="artist">Red Hot Chili Peppers</span> - By The Way</span>
+    <span><span class="artist">Red Hot Chili Peppers</span> - Can't Stop</span>
+    <span><span class="artist">Reef</span> - Place Your Hands</span>
+    <span><span class="artist">Semisonic</span> - Closing Time</span>
+    <span><span class="artist">Snow Patrol</span> - Chasing Cars</span>
+    <span><span class="artist">Snow Patrol</span> - Run</span>
+    <span><span class="artist">White Stripes</span> - Seven Nation Army</span>
+    <span><span class="artist">Wheatus</span> - A Little Respect</span>
+    <span><span class="artist">Wheatus</span> - Teenage Dirtbag</span>
+    <span><span class="artist">U2</span> - Where The Streets Have No Name</span>
+    <span><span class="artist">The Wannadies</span> - You & Me Song</span>
   </div>
 </section>
 
