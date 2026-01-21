@@ -48,6 +48,57 @@
       color: #e10600;
     }
 
+    /* =====================
+       Formspree box wider
+    ==================== */
+    .contact-box.contact-box-form {
+      flex: 1 1 600px; /* wider than default 350px */
+      min-width: 350px; /* keeps it mobile-friendly */
+    }
+
+    /* =====================
+       Formspree form inputs & button
+    ==================== */
+    .contact-box.contact-box-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-box.contact-box-form label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .contact-box.contact-box-form input,
+    .contact-box.contact-box-form textarea {
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background: #111;
+      color: #eee;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-box.contact-box-form textarea {
+      resize: vertical;
+    }
+
+    .contact-box.contact-box-form button {
+      padding: 10px;
+      background: #e10600;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-box.contact-box-form button:hover {
+      background: #ff2a2a;
+    }
+
     @media (max-width: 700px) {
       .contact-wrapper {
         flex-direction: column;
@@ -79,13 +130,34 @@
   <section class="panel">
     <div class="contact-wrapper">
 
+      <!-- Existing Contact Box -->
       <div class="contact-box">
         <h3>Contact Us</h3>
         <p>Contact us, by using one of these options:</p>
+        <p>Use the form below</strong></p>
         <p>Email: <a href="mailto:info@slim47.com">info@slim47.com</a></p>
         <p>Facebook: <a href="https://www.facebook.com/slim47" target="_blank">Facebook.com/slim47</a></p>
         <p>or call/WhatsApp Dave on 07867 229878 if you would like to talk to us about booking us for a pub gig, private function, festival or just to tell us how awesome we are!</p>
         <p>NB: If you email us and don't get a reply, please check your spam folder as we are finding emails are often mis-identified.</p>
+      </div>
+
+
+      <!-- Formspree Contact Form -->
+      <div class="contact-box contact-box-form">
+        <h3>Send Us a Message</h3>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+        <p>We'll reply as soon as possible!</p>
       </div>
 
     </div>
