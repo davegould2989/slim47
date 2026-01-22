@@ -20,6 +20,7 @@
 <body>
 
 <header>
+
   <div class="top-bar"></div>
   <nav>
     <div class="nav-inner">
@@ -36,6 +37,38 @@
         <li><a href="gigs.html">Gig List</a></li>
       </ul>
 
+<script src="js/gigs.js"></script>
+<script>
+function parseGigDate(dateStr) {
+  // "31 Jan 26" → Date
+  return new Date(Date.parse(dateStr.replace(/(\d{2})$/, '20$1')));
+}
+
+const today = new Date();
+
+const upcoming = gigs
+  .map(line => {
+    const [date, details] = line.split('\t');
+    return {
+      dateObj: parseGigDate(date),
+      text: `${date} – ${details}`
+    };
+  })
+  .filter(gig => gig.dateObj >= today)
+  .sort((a, b) => a.dateObj - b.dateObj);
+
+const nextGigEl = document.getElementById('next-gig');
+
+if (upcoming.length > 0) {
+  nextGigEl.textContent = `Next Gig: ${upcoming[0].text}`;
+} else {
+  nextGigEl.textContent = "No upcoming gigs announced";
+}
+</script>
+
+<div id="next-gig" class="next-gig">
+  Next Gig: loading…
+</div>
     </div>
   </nav>
 </header>
